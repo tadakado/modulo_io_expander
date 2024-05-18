@@ -1,0 +1,46 @@
+ATtiny817-MNR
+
+CLKCTRL
+ PDIV: 2
+TIMER
+ PER: 0x7
+ CMP2EN: x
+ CMP2: 0x4
+ (CMP2OV: x)
+ WGMODE: Single Slope PWM
+SPI
+ Driver: SPI:Init
+ MISO: PC1 ...
+ ENABLE: x
+ PERSC: 16
+ SSD: x
+DIGITAL GLUE LOGIC
+ RUNSTDBY: x
+ LUTEN: x
+ OUTEN: x
+ INSEL0: SPI0 SCK
+ INSEL1: SPI0 MOSI
+ INSEL2: TCA0 WO2
+ TRUTH1: 168
+I2C
+ Driver: I2C:Slave
+ SCL: PB0
+ SDA: PB1
+ ADDR: 0x20
+ ADDRMASK: 0x10
+CPUINT
+ CPU_SREG: x
+
+Project Name: xxx
+Location: プロジェクトのフォルダの場所
+Solution: 新規/追加
+Solution Name: xxx
+
+src/driver_init.c
+ DIGITAL_GLUE_LOGIC_0_initialization
+	PC1_set_level(false);
+	PC1_set_dir(PORT_DIR_OUT);
+	PORTMUX.CTRLA |= PORTMUX_LUT1_bm;
+
+ SPI_0_initialization
+  remove all pin settings
