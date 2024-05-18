@@ -5,3 +5,5 @@ AtTiny817 based IO expander with I2C to WS2812 bridge for modulo keyboards
 2. build: Build >> Build ???
 3. firmware: Debug/???.hex
 4. flash by pyupdi: pyupdi -d tiny817 -c COM4 -f ???.hex
+
+This is a part of [modulo keyboard project](https://github.com/tadakado/modulo)
